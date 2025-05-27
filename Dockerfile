@@ -1,4 +1,4 @@
-# 0) Bust the cache on every build
+# 0) Bust the cache on every build 
 ARG CACHEBUST=1
 
 # 1) Устанавливаем зависимости (с legacy-peer-deps)
@@ -15,13 +15,16 @@ COPY . .
 
 # Генерируем Prisma клиент ПЕРЕД сборкой
 RUN npx prisma generate
-
 RUN npm run build
 
 # 3) Запуск
 FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
+
+# Создаем пользователя nextjs для безопасности
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
@@ -30,6 +33,10 @@ COPY --from=builder /app/package.json ./package.json
 
 # Копируем Prisma файлы для миграций
 COPY --from=builder /app/prisma ./prisma
+
+# Меняем владельца файлов
+RUN chown -R nextjs:nodejs /app
+USER nextjs
 
 # Порт для запуска
 ENV PORT=3000
