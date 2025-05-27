@@ -12,6 +12,10 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+# Генерируем Prisma клиент ПЕРЕД сборкой
+RUN npx prisma generate
+
 RUN npm run build
 
 # 3) Запуск
@@ -23,6 +27,9 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
+
+# Копируем Prisma файлы для миграций
+COPY --from=builder /app/prisma ./prisma
 
 # Порт для запуска
 ENV PORT=3000
