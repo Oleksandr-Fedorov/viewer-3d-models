@@ -1,0 +1,234 @@
+/* validation-styles.css */
+
+/* Стили для табов */
+.model-info-tabs {
+	display: flex;
+	margin: 0 auto;
+}
+
+.tab-button {
+	background: rgba(255, 255, 255, 0.1);
+	border: none;
+	color: #ccc;
+	padding: 6px 16px;
+	cursor: pointer;
+	font-size: 14px;
+	margin-right: 4px;
+	border-radius: 4px 4px 0 0;
+	position: relative;
+	transition: background-color 0.2s;
+}
+
+.tab-button:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.tab-button.active {
+	background: rgba(255, 255, 255, 0.2);
+	color: white;
+}
+
+.validation-error-indicator {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 8px;
+	height: 8px;
+	background-color: #f44336;
+	border-radius: 50%;
+}
+
+/* Стили для отображения валидации */
+.loading-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 0;
+}
+
+.loading-spinner {
+	border: 4px solid rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	border-top: 4px solid #ffffff;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 20px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.validation-error {
+	padding: 20px;
+	background-color: rgba(244, 67, 54, 0.1);
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+.validation-error h3 {
+	color: #f44336;
+	margin-top: 0;
+}
+
+.validation-summary {
+	margin-bottom: 20px;
+}
+
+.summary-status {
+	margin-bottom: 16px;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.status-valid {
+	color: #4caf50;
+	display: inline-block;
+	padding: 4px 12px;
+	background-color: rgba(76, 175, 80, 0.15);
+	border-radius: 4px;
+	margin-bottom: 16px;
+}
+
+.status-error {
+	color: #f44336;
+	display: inline-block;
+	padding: 4px 12px;
+	background-color: rgba(244, 67, 54, 0.15);
+	border-radius: 4px;
+	margin-bottom: 16px;
+}
+
+.error-count {
+	color: #f44336;
+	background-color: rgba(244, 67, 54, 0.15);
+	padding: 2px 8px;
+	border-radius: 4px;
+	margin-right: 8px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.warning-count {
+	color: #ffc107;
+	background-color: rgba(255, 193, 7, 0.15);
+	padding: 2px 8px;
+	border-radius: 4px;
+	margin-right: 8px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.info-count {
+	color: #2196f3;
+	background-color: rgba(33, 150, 243, 0.15);
+	padding: 2px 8px;
+	border-radius: 4px;
+	margin-right: 8px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+.hint-count {
+	color: #9e9e9e;
+	background-color: rgba(158, 158, 158, 0.15);
+	padding: 2px 8px;
+	border-radius: 4px;
+	margin-right: 8px;
+	font-weight: 500;
+	display: inline-block;
+}
+
+/* Стили для разделов с ошибками/предупреждениями/подсказками */
+.errors h3::before,
+.warnings h3::before,
+.infos h3::before,
+.hints h3::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	margin-right: 8px;
+}
+
+.errors h3::before {
+	background-color: #f44336;
+}
+
+.warnings h3::before {
+	background-color: #ffc107;
+}
+
+.infos h3::before {
+	background-color: #2196f3;
+}
+
+.hints h3::before {
+	background-color: #9e9e9e;
+}
+
+.issue-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.issue-item {
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+	margin-bottom: 8px;
+	overflow: hidden;
+}
+
+.issue-header {
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 8px 12px;
+	display: flex;
+	justify-content: space-between;
+	font-family: monospace;
+	font-size: 0.9rem;
+}
+
+.issue-code {
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.issue-pointer {
+	color: #aaa;
+	max-width: 60%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.issue-message {
+	padding: 12px;
+	font-size: 0.95rem;
+	line-height: 1.4;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+	.issue-header {
+		flex-direction: column;
+	}
+
+	.issue-pointer {
+		max-width: 100%;
+		margin-top: 4px;
+	}
+
+	.tab-button {
+		padding: 4px 10px;
+		font-size: 12px;
+	}
+}

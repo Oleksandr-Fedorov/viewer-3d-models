@@ -1,0 +1,152 @@
+/* Additional styles for the contact page - add these to your CSS file */
+
+/* Form Specific Styles */
+.search-input,
+.newsletter-input {
+	background-color: rgba(28, 31, 47, 0.6);
+	border: 1px solid #2e344d;
+	color: #e8e9ea;
+	padding: 0.75rem 1rem;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+}
+
+.search-input:focus,
+.newsletter-input:focus {
+	background-color: rgba(28, 31, 47, 0.8);
+	border-color: #00ffaa5b;
+	box-shadow: 0 0 0 2px rgba(0, 255, 170, 0.2);
+	outline: none;
+}
+
+.search-input::placeholder,
+.newsletter-input::placeholder {
+	color: #6c757d;
+}
+
+/* Loading spinner for form submission */
+.loading-spinner {
+	display: inline-block;
+	width: 1.25rem;
+	height: 1.25rem;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	border-top-color: #e8e9ea;
+	animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Card hover effects */
+.contact-card {
+	transition: all 0.3s ease;
+	background-color: rgba(20, 20, 33, 0.7);
+	border: 1px solid #2e2e4c;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.contact-card:hover {
+	transform: translateY(-5px);
+	box-shadow:
+		3px 9px 25px rgb(0, 0, 0, 0.5),
+		-3px -3px 10px rgba(255, 255, 255, 0.08),
+		0 0 15px rgba(0, 255, 170, 0.2);
+	border-color: #00ffaa5b;
+}
+
+/* Map container styles */
+.map-container {
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+}
+
+.map-placeholder {
+	background: linear-gradient(45deg, #141421, #1a1a2e);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px;
+}
+
+/* FAQ accordion styles */
+.faq-item {
+	margin-bottom: 1rem;
+}
+
+.faq-question {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background-color: rgba(28, 31, 47, 0.6);
+	border: 1px solid #2e344d;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+	background-color: rgba(0, 255, 170, 0.1);
+	border-color: #00ffaa5b;
+}
+
+.faq-answer {
+	padding: 1rem;
+	background-color: rgba(20, 20, 33, 0.5);
+	border: 1px solid #2e2e4c;
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+	margin-top: -2px;
+}
+
+/* Contact info icons */
+.contact-icon-container {
+	min-width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1rem;
+	background-color: rgba(0, 255, 170, 0.1);
+	border: 1px solid #00ffaa5b;
+	color: #00ffaaed;
+}
+
+/* Success message styles */
+.success-message {
+	background-color: rgba(0, 128, 0, 0.1);
+	border: 1px solid rgba(0, 255, 0, 0.3);
+	border-radius: 8px;
+	padding: 2rem;
+	text-align: center;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+	.contact-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.form-section {
+		order: -1;
+	}
+}

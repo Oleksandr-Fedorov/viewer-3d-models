@@ -1,0 +1,226 @@
+/* ModelInfoReport.css */
+
+.model-info-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+.visible {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+.model-info-container {
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	width: 90%;
+	max-width: 900px;
+	max-height: 90vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	color: #333;
+}
+
+.model-info-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px 24px;
+	background-color: rgba(20, 20, 33, 0.8);
+	color: white;
+}
+
+.model-info-header h2 {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.close-button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 24px;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	transition: background-color 0.2s;
+}
+
+.close-button:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.model-info-content {
+	padding: 20px 24px;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.model-info-section {
+	margin-bottom: 24px;
+	background-color: #f8f9fa;
+	border-radius: 6px;
+	padding: 16px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.model-info-section h3 {
+	margin-top: 0;
+	margin-bottom: 16px;
+	color: #2196f3;
+	font-size: 1.2rem;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 8px;
+}
+
+.info-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.info-table td {
+	padding: 8px 0;
+	vertical-align: top;
+	line-height: 1.4;
+}
+
+.info-table td:first-child {
+	width: 150px;
+	color: #666;
+}
+
+.model-info-footer {
+	padding: 16px 24px;
+	background-color: rgba(20, 20, 33, 0.8);
+	border-top: 1px solid #e0e0e0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.close-report-button {
+	background-color: #2196f3;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	transition: background-color 0.2s;
+}
+
+.close-report-button:hover {
+	background-color: #1976d2;
+}
+
+.extensions-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-family: monospace;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 8px;
+}
+
+.extensions-list li {
+	padding: 6px 10px;
+	background-color: #e3f2fd;
+	border-radius: 4px;
+	font-size: 0.9rem;
+}
+
+/* Стили для дерева сцены */
+.scene-tree {
+	max-height: 300px;
+	overflow-y: auto;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.scene-tree-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.scene-tree-item {
+	margin: 0;
+	padding: 0;
+}
+
+.scene-tree-node {
+	padding: 6px 10px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.1s;
+}
+
+.scene-tree-node:hover {
+	background-color: #f0f4f8;
+}
+
+.tree-toggle {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	line-height: 16px;
+	margin-right: 8px;
+	font-size: 10px;
+}
+
+.node-type {
+	font-size: 0.9rem;
+	color: #fff;
+	background-color: #607d8b;
+	padding: 2px 6px;
+	border-radius: 3px;
+	margin-right: 8px;
+	font-weight: 500;
+}
+
+.node-type.mesh {
+	background-color: #4caf50;
+}
+
+.node-type.light {
+	background-color: #ff9800;
+}
+
+.node-type.camera {
+	background-color: #9c27b0;
+}
+
+.node-type.bone {
+	background-color: #795548;
+}
+
+.node-type.group {
+	background-color: #2196f3;
+}
+
+.node-name {
+	font-size: 0.95rem;
+}

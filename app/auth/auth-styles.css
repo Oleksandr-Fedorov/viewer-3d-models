@@ -1,0 +1,199 @@
+.auth-popup {
+	position: relative;
+	display: flex; /* Flexbox для центрирования */
+	align-items: center; /* Вертикальное центрирование */
+	justify-content: center; /* Горизонтальное центрирование */
+	min-height: 100vh; /* Высота в пределах viewport */
+	width: 100%;
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 1) 15%,
+		rgba(2, 0, 42, 1) 58%,
+		rgba(4, 0, 116, 1) 100%
+	);
+	padding: 20px;
+}
+
+.auth-popup__card {
+	max-width: 470px;
+	width: 100%;
+	position: relative;
+	z-index: 5;
+	border: none;
+	background-color: #997caa;
+	perspective: 1000px;
+	/* Добавляем отступы для мобильных устройств */
+	padding: 0 15px;
+}
+
+.auth-popup__card__inner {
+	position: relative;
+	width: 100%;
+	/* Делаем высоту равной родительскому контейнеру */
+	display: flex; /* Flexbox для центрирования содержимого */
+	align-items: center; /* Центрирование по вертикали */
+	text-align: center;
+	background-color: #a2c22f;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+}
+
+.auth-popup__card.switched .auth-popup__card__inner {
+	transform: rotateY(180deg);
+}
+
+.card-body {
+	padding: 16px;
+	color: #e8e9ea;
+}
+
+.card-body__title {
+	margin: 0;
+	color: #00ffaaed;
+	margin-bottom: 8px;
+	font-weight: 500;
+}
+
+.card-body__description {
+	margin: 0;
+	color: #1d78c7;
+	margin-bottom: 16px;
+}
+
+/* 2 блока расположены вряд по отношению к друг другу
+и находятся внутри auth-popup__card__inner,но так как они размещены абсолютно,то они не влияют на друг друга и на 
+auth-popup__card__inner*/
+.card-front,
+.card-back {
+	position: absolute;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.card-back {
+	transform: rotateY(180deg);
+}
+
+.card-body__inner {
+	margin-top: 30px;
+}
+
+.inner-top {
+	margin-bottom: 12px;
+}
+
+.wow-bg {
+	background-color: #141421;
+	border: 1px solid #2e2e4c;
+	box-shadow:
+		3px 9px 16px rgb(0, 0, 0, 0.4),
+		-3px -3px 10px rgba(255, 255, 255, 0.06),
+		inset 14px 14px 26px rgb(0, 0, 0, 0.3),
+		inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+	border-radius: 10px;
+	margin-top: 4px;
+}
+
+.inner__btn {
+	background: #1c1f2f;
+	border-radius: 30px;
+	width: 100%;
+	min-height: 38px;
+	overflow: hidden;
+	border: 1px solid #2e344d;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+	/* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+	box-shadow:
+		0px 2px 26px rgb(0, 0, 0, 0.5),
+		0px 7px 13px rgba(255, 255, 255, 0.03);
+	cursor: pointer;
+	color: #e8e9ea;
+}
+
+.inner__btn:hover {
+	background-color: #1c1f2f;
+	border-radius: 50px;
+	min-width: 140px;
+	/* box-shadow: 10px 10px 36px rgb(0,0,0,0.5), -13px -13px 23px rgba(255,255,255, 0.03), inset 14px 14px 70px rgb(0,0,0,0.2), inset -15px -15px 30px rgba(255,255,255, 0.04); */
+	box-shadow:
+		3px 9px 16px rgb(0, 0, 0, 0.4),
+		-3px -3px 10px rgba(255, 255, 255, 0.06),
+		inset 14px 14px 26px rgb(0, 0, 0, 0.3),
+		inset -3px -3px 15px rgba(255, 255, 255, 0.05);
+	border-width: 1px 0px 0px 1px;
+	border-style: solid;
+	border-color: #2e344d;
+}
+
+.form__block__input {
+	width: 100%;
+	height: 38px;
+	padding: 6px 12px;
+	background: rgba(28, 31, 47, 0.16);
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #2e344d;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+	box-shadow:
+		10px 10px 36px rgb(0, 0, 0, 0.5),
+		-13px,
+		-13px,
+		23px,
+		rgba(255, 255, 255, 0.03);
+
+	margin-top: 24px;
+	color: #e8e9ea;
+}
+
+.form__block {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+}
+
+.form__block__input::placeholder {
+	color: #495057;
+}
+
+.form__block__input:focus {
+	border: 1px solid #344d2e;
+	outline: 0;
+	background: rgb(17, 20, 31);
+	border-radius: 4px;
+	transition: all 0.3 ease-in-out 0s;
+	box-shadow:
+		10px 10px 36px rgb(0, 0, 0, 0.5),
+		-13px -13px 23px rgba(255, 255, 255, 0.03);
+}
+
+.inner__switch {
+	color: #344d2e;
+}
+
+.inner__switch:hover {
+	color: #2b7a19;
+	text-decoration: underline;
+}
+
+.inner__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+}
+
+.inner__bottom__text {
+	color: #6c757d;
+	margin-right: 10px;
+}

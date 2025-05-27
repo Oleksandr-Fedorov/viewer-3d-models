@@ -1,0 +1,112 @@
+.header {
+	position: relative;
+	z-index: 3;
+	background-color: azure;
+	box-shadow:
+		0px 2px 4px 0px rgba(0, 0, 0, 0.2),
+		0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.header_container {
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
+.header_logo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-65%);
+}
+
+.header_links {
+	display: flex;
+	align-items: center;
+}
+
+.header_links_item_btn {
+	width: 24px;
+	height: 24px;
+	display: block;
+	position: relative;
+}
+
+.header_links_item_btn::before {
+	content: '';
+	height: 100%;
+	width: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.header_links_item_btn--search::before,
+.header_links_item_btn--cart::before,
+.header_links_item_btn--favorites::before,
+.header_links_item_btn--profile::before,
+.header_menu::before {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.header_links_item_btn--search::before {
+	background-image: url(/img/SVG_icons/search.svg);
+}
+.header_links_item_btn--cart::before {
+	background-image: url(/img/SVG_icons/cart.svg);
+}
+.header_links_item_btn--favorites::before {
+	background-image: url(/img/SVG_icons/favourite.svg);
+}
+
+.header_links_item_btn--profile::before {
+	background-image: url(/img/SVG_icons/profile.svg);
+}
+
+.header_links_item_btn:hover::before,
+.header_menu:hover::before {
+	filter: invert(50%) sepia(100%) hue-rotate(150deg) saturate(200%);
+	transition: 0.25s ease-in-out;
+}
+
+.header_links_item:not(:last-child) {
+	margin-right: 40px;
+}
+
+.header_links_item--profile {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.logo .text {
+	color: rgb(238, 255, 0);
+	font-size: 30px;
+}
+
+.header_menu {
+	position: relative;
+	padding-left: 38px !important;
+	color: brown;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.header_menu::before {
+	content: '';
+	height: 25px;
+	width: 25px;
+	left: 3px;
+	position: absolute;
+	top: 7px;
+	background-image: url(/img/SVG_icons/menu.svg);
+}

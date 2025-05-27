@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.wrapper {
+	position: absolute;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100vh;
+	width: 100vw;
+	gap: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+}
+
+.wrapper h1 {
+	color: #fff;
+}
+
+.Form_inp {
+	backdrop-filter: blur(30px);
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	padding: 85px 40px;
+	margin: 400px 0 400px 0;
+	border-radius: 10px;
+	width: 500px;
+	color: #fff;
+	background: transparent;
+}
+
+.controls {
+	position: absolute;
+	top: 20px; /* Отступ сверху */
+	right: 20px; /* Отступ справа */
+	z-index: 2; /* Убедитесь, что элементы управления находятся поверх Canvas */
+}
+
+.Form_inp .input-box {
+	position: relative;
+	width: 100%;
+	height: 60px;
+
+	margin: 30px 0;
+}
+
+.Form_inp h1 {
+	color: blueviolet;
+}
+
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	border: 2px solid rgba(255, 255, 255, 0.2);
+	border-radius: 40px;
+	font-size: 25px;
+	color: #fff;
+	padding: 20px 45px 20px 20px;
+}
+
+.Form_inp .icon {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 25px;
+}
+
+.input-box input::placeholder {
+	color: #fff;
+}
+
+.remember-forgot {
+	display: flex;
+	justify-content: space-between;
+	font-size: 23px;
+	margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+	accent-color: #fff;
+	margin-right: 4px;
+	width: 15px;
+	height: 15px;
+}
+
+.remember-forgot a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.remember-forgot a:hover {
+	text-decoration: underline;
+}
+
+.wrapper button {
+	width: 100%;
+	height: 45px;
+	background: #fff;
+	border: none;
+	outline: none;
+	border-radius: 40px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	font-size: 25px;
+	color: #333;
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.wrapper .register-link {
+	font-size: 23px;
+	text-align: center;
+	margin: 20px 0 15px;
+}
+
+.register-link p a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.register-link p a:hover {
+	text-decoration: underline;
+}
+
+.Login_Div {
+	position: relative;
+	height: 100%;
+}
+
+.Background_Style {
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+}

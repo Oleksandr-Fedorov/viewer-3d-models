@@ -1,0 +1,293 @@
+/* Стили для страницы Canvas */
+.canvas-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 100%;
+	background-color: #000;
+	color: #e8e9ea;
+}
+
+/* Стили для хедера */
+.canvas-header {
+	background-color: rgba(20, 20, 33, 0.8);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid #2e2e4c;
+	padding: 0.75rem 0;
+	position: relative;
+	z-index: 100;
+}
+
+.canvas-header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.home-link {
+	display: flex;
+	align-items: center;
+	color: #00ffaaed;
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.home-link:hover {
+	color: #00ffcc;
+}
+
+.model-title {
+	color: #e8e9ea;
+	font-size: 1rem;
+	max-width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.canvas-actions {
+	display: flex;
+	gap: 0.75rem;
+}
+
+.canvas-action-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	background-color: rgba(28, 31, 47, 0.6);
+	border: 1px solid #2e344d;
+	border-radius: 50%;
+	color: #00ffaaed;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.canvas-action-btn:hover {
+	background-color: rgba(0, 255, 170, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+}
+
+.canvas-action-btn.active {
+	background-color: rgba(0, 255, 170, 0.2);
+	box-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
+}
+
+/* Стили для основного контента */
+.canvas-main {
+	flex-grow: 1;
+	position: relative;
+	height: 0;
+	overflow: hidden;
+}
+
+/* Стили для дропзоны */
+.dropzone-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		135deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(2, 0, 42, 1) 50%,
+		rgba(4, 0, 116, 1) 100%
+	);
+}
+
+.dropzone-area {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	max-width: 600px;
+	aspect-ratio: 16/9;
+	border: 2px dashed #2e2e4c;
+	border-radius: 12px;
+	padding: 2rem;
+	text-align: center;
+	background-color: rgba(20, 20, 33, 0.6);
+	transition: all 0.3s ease;
+}
+
+.dropzone-active {
+	background-color: rgba(0, 255, 170, 0.1);
+	border-color: #00ffaa;
+	transform: scale(1.02);
+	box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+}
+
+.dropzone-icon {
+	margin-bottom: 1.5rem;
+	background-color: rgba(28, 31, 47, 0.6);
+	padding: 1rem;
+	border-radius: 50%;
+	box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+}
+
+.dropzone-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #00ffaaed;
+	margin-bottom: 0.75rem;
+	text-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+}
+
+.dropzone-text {
+	color: #b3b8c3;
+	margin-bottom: 1.5rem;
+}
+
+.dropzone-button {
+	background: linear-gradient(45deg, #00c3ff, #00ffaa);
+	color: #141421;
+	font-weight: 600;
+	padding: 0.75rem 2rem;
+	border-radius: 30px;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
+	transition: all 0.3s ease;
+}
+
+.dropzone-button:hover {
+	background: linear-gradient(45deg, #00d4ff, #00ffb3);
+	box-shadow: 0 6px 20px rgba(0, 255, 170, 0.4);
+	transform: translateY(-2px);
+}
+
+/* Стили для перетаскивания на активный вьювер */
+.drag-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	animation: fadeIn 0.3s ease;
+}
+
+.drag-overlay-content {
+	background-color: rgba(20, 20, 33, 0.8);
+	border: 2px dashed #00ffaa;
+	border-radius: 12px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	max-width: 500px;
+	box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+}
+
+/* Стили для индикатора загрузки */
+.loading-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(3px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+
+.loading-spinner {
+	width: 60px;
+	height: 60px;
+	border: 4px solid rgba(0, 255, 170, 0.1);
+	border-top: 4px solid #00ffaa;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	margin-bottom: 1rem;
+}
+
+.loading-text {
+	color: #00ffaaed;
+	font-size: 1.2rem;
+	text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+}
+
+/* Стили для футера */
+.canvas-footer {
+	background-color: rgba(20, 20, 33, 0.8);
+	border-top: 1px solid #2e2e4c;
+	text-align: center;
+	padding: 0.75rem 0;
+	color: #6c757d;
+	font-size: 0.875rem;
+}
+
+/* Анимации */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+	.canvas-header-content {
+		padding: 0 1rem;
+	}
+
+	.model-title {
+		max-width: 200px;
+	}
+
+	.dropzone-area {
+		width: 90%;
+		padding: 1.5rem;
+	}
+
+	.dropzone-title {
+		font-size: 1.25rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.canvas-actions {
+		gap: 0.5rem;
+	}
+
+	.canvas-action-btn {
+		width: 32px;
+		height: 32px;
+	}
+
+	.model-title {
+		max-width: 120px;
+	}
+
+	.dropzone-button {
+		padding: 0.5rem 1.5rem;
+	}
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	CUBO RUBIK 3X3 (OBJ)
+* source:	https://sketchfab.com/3d-models/cubo-rubik-3x3-obj-e320eae6da6c41aba1879e9507032b9d
+* author:	ElUvitta (https://sketchfab.com/xddron814)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CUBO RUBIK 3X3 (OBJ)" (https://sketchfab.com/3d-models/cubo-rubik-3x3-obj-e320eae6da6c41aba1879e9507032b9d) by ElUvitta (https://sketchfab.com/xddron814) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
