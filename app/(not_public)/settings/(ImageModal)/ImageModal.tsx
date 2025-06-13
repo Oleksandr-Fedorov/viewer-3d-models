@@ -1,5 +1,4 @@
 'use client'
-// Создаем компонент модального окна для просмотра изображения
 import React from 'react'
 import { X } from 'lucide-react'
 import './styles.css'
@@ -18,8 +17,6 @@ const ImageModal: React.FC<ImageModalProps> = ({
 	onClose,
 }) => {
 	if (!isOpen) return null
-
-	// Обработчик для закрытия модального окна при клике на задний фон
 	const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (e.target === e.currentTarget) {
 			onClose()
